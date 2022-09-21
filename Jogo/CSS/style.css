@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.board{
+    width: 100%;
+    height: 500px;
+    border-bottom: 15px solid rgb(7, 190, 31);
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden; /*Para o tubo não aparecer na tela qundo atingir 100%*/
+    background: linear-gradient(#87ceeb, #e0f6ff);
+}
+
+.nuvens{
+    position: absolute;
+    width: 550px;
+    animation: nuvens-animation 20s infinite linear;
+}
+
+.tubo{
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    right: -80px; /*Para dar o efeito de entrada no quadro*/
+    animation: tubo-animation 3s infinite linear; 
+}
+
+.mario{
+    width: 150px;
+    bottom: 0;
+    position: absolute;
+}
+.pulo{
+    animation: pulo 500ms infinite ease-out; 
+}
+
+@keyframes nuvens-animation{ /*0% até 100%*/
+
+    from{
+        right: -550px;
+    }
+    
+    to{
+        right: 100%;
+    }
+    }
+    
+
+@keyframes tubo-animation{ /*0% até 100%*/
+
+from{
+    right: 0%;
+}
+
+to{
+    right: 100%;
+}
+}
+
+@keyframes pulo { /*bottom=0px bottom=100px bottom=0px*/
+
+0% {
+    bottom: 0;
+}
+
+40% {
+    bottom: 180px;
+}
+    
+50% {
+    bottom: 180px;
+}
+
+60% {
+    bottom: 180px;
+}
+
+100% {
+    bottom: 0;
+}
+}
